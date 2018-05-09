@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="go语言学习笔记">
-<meta name="keywords" content="go,server">
+  <meta name="description" content="Go notes">
+<meta name="keywords" content="go,gin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Go notes">
+<meta property="og:title" content="Go">
 <meta property="og:url" content="http://yoursite.com/2018/05/09/notes/index.html">
 <meta property="og:site_name" content="xinayida">
-<meta property="og:description" content="go语言学习笔记">
+<meta property="og:description" content="Go notes">
 <meta property="og:locale" content="zg-CN">
-<meta property="og:updated_time" content="2018-05-09T02:33:37.442Z">
+<meta property="og:updated_time" content="2018-05-09T03:51:18.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Go notes">
-<meta name="twitter:description" content="go语言学习笔记">
+<meta name="twitter:title" content="Go">
+<meta name="twitter:description" content="Go notes">
 
 
 
@@ -130,7 +130,7 @@
   };
 </script>
 
-  <title>Go notes | xinayida</title>
+  <title>Go | xinayida</title>
   
 
 
@@ -295,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Go notes
+          <h1 class="post-title" itemprop="name headline">Go
               
             
           </h1>
@@ -320,7 +320,7 @@
                 
               
 
-              <time title="Created: 2018-05-09 10:30:56 / Modified: 10:33:37" itemprop="dateCreated datePublished" datetime="2018-05-09T10:30:56+08:00">2018-05-09</time>
+              <time title="Created: 2018-05-09 10:30:56 / Modified: 11:51:18" itemprop="dateCreated datePublished" datetime="2018-05-09T10:30:56+08:00">2018-05-09</time>
             
 
             
@@ -362,7 +362,7 @@
           
 
           
-              <div class="post-description">go语言学习笔记</div>
+              <div class="post-description">Go notes</div>
           
 
         </div>
@@ -378,7 +378,24 @@
       
 
       
-        
+        <ul>
+<li>值：  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line">func main() &#123;  </span><br><span class="line">    // 字符串可以通过 + 连接。</span><br><span class="line">    fmt.Println(&quot;go&quot; + &quot;lang&quot;)</span><br><span class="line"></span><br><span class="line">    // 整数和浮点数</span><br><span class="line">    fmt.Println(&quot;1+1 =&quot;, 1+1)</span><br><span class="line">    fmt.Println(&quot;7.0/3.0 =&quot;, 7.0/3.0)</span><br><span class="line"></span><br><span class="line">    // 布尔型，还有你想要的逻辑运算符。</span><br><span class="line">    fmt.Println(true &amp;&amp; false)</span><br><span class="line">    fmt.Println(true || false)</span><br><span class="line">    fmt.Println(!true)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">golang</span><br><span class="line">1+1 = 2</span><br><span class="line">7.0/3.0 = 2.3333333333333335</span><br><span class="line">false</span><br><span class="line">true</span><br><span class="line">false</span><br></pre></td></tr></table></figure>
+<ul>
+<li>变量  </li>
+</ul>
+<p><code>var</code>声明1个或多个变量  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a string = &quot;initial&quot;</span><br><span class="line">var b, c int = 1, 2</span><br></pre></td></tr></table></figure>
+<p>自动推断已经初始化的变量类型  <code>var b = true</code></p>
+<ul>
+<li>赋值：<code>var :=</code></li>
+<li></li>
+<li><p>运行：go run 编译：go build  </p>
+</li>
+</ul>
+<h3 id="网络框架-gin"><a href="#网络框架-gin" class="headerlink" title="网络框架: gin"></a>网络框架: <a href="http://www.okyes.me/2016/05/03/go-gin.html" target="_blank" rel="noopener">gin</a></h3>
       
     </div>
 
@@ -400,7 +417,7 @@
           
             <a href="/tags/go/" rel="tag"># go</a>
           
-            <a href="/tags/server/" rel="tag"># server</a>
+            <a href="/tags/gin/" rel="tag"># gin</a>
           
         </div>
       
@@ -470,8 +487,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -544,6 +570,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络框架-gin"><span class="nav-number">1.</span> <span class="nav-text">网络框架: gin</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
