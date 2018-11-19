@@ -8,23 +8,31 @@
         <category>android</category>
       </categories>
       <tags>
-        <tag>android recyclerview</tag>
+        <tag>android</tag>
+        <tag>recyclerview</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[ffmpeg编译]]></title>
     <url>%2F2018%2F05%2F23%2Fffmpeg%E7%BC%96%E8%AF%91%2F</url>
     <content type="text"><![CDATA[1.Download 下载ndk： https://developer.android.google.cn/ndk/downloads/ 下载ffmpeg: http://ffmpeg.org/download.html#releases 2.Config ./configure 12345678910111213SLIBNAME_WITH_VERSION=&apos;$(SLIBNAME).$(LIBVERSION)&apos;# SLIBNAME_WITH_MAJOR=&apos;$(SLIBNAME).$(LIBMAJOR)&apos;SLIBNAME_WITH_MAJOR=&apos;$(SLIBPREF)$(FULLNAME)-$(LIBMAJOR)$(SLIBSUF)&apos; LIB_INSTALL_EXTRA_CMD=&apos;$$(RANLIB) &quot;$(LIBDIR)/$(LIBNAME)&quot;&apos;# SLIB_INSTALL_NAME=&apos;$(SLIBNAME_WITH_VERSION)&apos;SLIB_INSTALL_NAME=&apos;$(SLIBNAME_WITH_MAJOR)&apos;# SLIB_INSTALL_LINKS=&apos;$(SLIBNAME_WITH_MAJOR) $(SLIBNAME)&apos;SLIB_INSTALL_LINKS=&apos;$(SLIBNAME)&apos;``` add build_android.sh chmod +x build_android.shopen and edit:]]></content>
+      <categories>
+        <category>c++</category>
+      </categories>
+      <tags>
+        <tag>ffmpeg</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Spring搭建微信后台]]></title>
     <url>%2F2018%2F05%2F17%2FSpring%E6%90%AD%E5%BB%BA%E5%BE%AE%E4%BF%A1%E5%90%8E%E5%8F%B0%2F</url>
     <content type="text"><![CDATA[配置Mybatis http://www.mybatis.org/spring/mappers.html#scan http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/]]></content>
       <categories>
-        <category>spring</category>
+        <category>java</category>
       </categories>
       <tags>
-        <tag>spring wechat</tag>
+        <tag>spring</tag>
+        <tag>wechat</tag>
       </tags>
   </entry>
   <entry>
@@ -37,10 +45,9 @@
     <url>%2F2018%2F05%2F09%2FSpring-notes%2F</url>
     <content type="text"><![CDATA[javax.annotation.Resource和@Autowired区别 @Resource和@Autowired两者都是做bean的注入使用。 其实@Resource并不是Spring的注解，他的包是javax.annotation.Resource 需要导入。但是Spring支持该注解的注入。 共同点：两者都可以写在字段和setter方法上。两者如果都写在字段上，就不需要写写setter方法。 @Autowired @Autowired为Spring提供的注解， 需导入Package:org.springframework.beans.factory.annotation.Autowired; 只按照byType 注入。 1234567@Autowired private UserDao userDao;//用于字段上@Autowiredpublic void setUserDao(UserDao userDao) &#123;//用于属性的setter方法上 this.userDao= userDao;&#125; @Autowired注解是按类型装配依赖对象，默认情况下它要求依赖对象必须存在，如果允许null值，可以设置它required属性为false。 如果想使用按名称装配，可以结合@Qualifier注解一起使用。 12@Autowired @Qualifier(&quot;userDao&quot;)private PersonDao personDao; @Resource @Resource默认按 byName 自动注入,由J2EE提供。 需导入Package: javax.annotation.Resource @Resource有两个中重要的属性：name和type ，而Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。所以如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用 byType自动注入策略。如果既不指定name也不指定type属性，这时将通过反射机制使用byName自动注入策略。 @Resource装配顺序 (1). 如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常; (2). 如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常; (3). 如果指定了type，则从上下文中找到类型匹配的唯一bean进行装配，找不到或者找到多个，都会抛出异常; (4). 如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配； 总结 @Autowired按byType自动注入，@Resource默认按byName自动注入 一般使用@Resource，从而实现和Spring框架解耦合 转自： Link]]></content>
       <categories>
-        <category>spring</category>
+        <category>java</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>spring</tag>
       </tags>
   </entry>
