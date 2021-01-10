@@ -13,8 +13,8 @@
         <category>java</category>
       </categories>
       <tags>
-        <tag>Android</tag>
         <tag>ffmpeg</tag>
+        <tag>Android</tag>
         <tag>live</tag>
       </tags>
   </entry>
@@ -33,7 +33,7 @@
   <entry>
     <title><![CDATA[ffmpeg编译]]></title>
     <url>%2F2018%2F05%2F23%2Fffmpeg%E7%BC%96%E8%AF%91%2F</url>
-    <content type="text"><![CDATA[1.Download 下载ndk： https://developer.android.google.cn/ndk/downloads/ 下载ffmpeg: http://ffmpeg.org/download.html#releases 2.Config ./configure 12345678910111213SLIBNAME_WITH_VERSION=&apos;$(SLIBNAME).$(LIBVERSION)&apos;# SLIBNAME_WITH_MAJOR=&apos;$(SLIBNAME).$(LIBMAJOR)&apos;SLIBNAME_WITH_MAJOR=&apos;$(SLIBPREF)$(FULLNAME)-$(LIBMAJOR)$(SLIBSUF)&apos; LIB_INSTALL_EXTRA_CMD=&apos;$$(RANLIB) &quot;$(LIBDIR)/$(LIBNAME)&quot;&apos;# SLIB_INSTALL_NAME=&apos;$(SLIBNAME_WITH_VERSION)&apos;SLIB_INSTALL_NAME=&apos;$(SLIBNAME_WITH_MAJOR)&apos;# SLIB_INSTALL_LINKS=&apos;$(SLIBNAME_WITH_MAJOR) $(SLIBNAME)&apos;SLIB_INSTALL_LINKS=&apos;$(SLIBNAME)&apos;``` add build_android.sh chmod +x build_android.shopen and edit:]]></content>
+    <content type="text"><![CDATA[1.Download 下载ndk： https://developer.android.google.cn/ndk/downloads/ 下载ffmpeg: http://ffmpeg.org/download.html#releases 2.Config ./configure 1234567891011121314SLIBNAME_WITH_VERSION=&apos;$(SLIBNAME).$(LIBVERSION)&apos;# SLIBNAME_WITH_MAJOR=&apos;$(SLIBNAME).$(LIBMAJOR)&apos;SLIBNAME_WITH_MAJOR=&apos;$(SLIBPREF)$(FULLNAME)-$(LIBMAJOR)$(SLIBSUF)&apos; LIB_INSTALL_EXTRA_CMD=&apos;$$(RANLIB) &quot;$(LIBDIR)/$(LIBNAME)&quot;&apos;# SLIB_INSTALL_NAME=&apos;$(SLIBNAME_WITH_VERSION)&apos;SLIB_INSTALL_NAME=&apos;$(SLIBNAME_WITH_MAJOR)&apos;# SLIB_INSTALL_LINKS=&apos;$(SLIBNAME_WITH_MAJOR) $(SLIBNAME)&apos;SLIB_INSTALL_LINKS=&apos;$(SLIBNAME)&apos;``` add build_android.sh chmod +x build_android.shopen and edit: #!/bin/bash #你自己的NDK路径。 export NDK=/Users/ww/workspace/tools/android-ndk-r15c 设置你的android平台编译器的版本 这里采用Android4.0 export SYSROOT=$NDK/platforms/android-18/arch-arm/ #编译使用的toolchain export TOOLCHAIN=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 export PLATFORM=$NDK/platforms/android-18/arch-arm64/ export CPU=arm-v7 这个是输出的路径 export PREFIX=$(pwd)/android/$CPU export ADDI_CFLAGS=&quot;-marm&quot; ./configure --target-os=linux --prefix=$PREFIX --arch=arm --enable-decoder=h264 --enable-decoder=mp3 --enable-decoder=aac --disable-doc --enable-shared --disable-static --disable-x86asm --disable-symver --enable-gpl --enable-libx264 --enable-libx265 --disable-ffmpeg --disable-ffplay --disable-ffprobe --disable-doc --disable-symver --cross-prefix=$TOOLCHAIN/bin/arm-linux-androideabi- --enable-cross-compile --sysroot=$SYSROOT --extra-cflags=&quot;-I../x264/android/arm/include&quot; --extra-ldflags=&quot;-L../x264/android/arm/lib&quot; --extra-cflags=&quot;-Os -fpic $ADDI_CFLAGS&quot; --extra-ldflags=&quot;$ADDI_LDFLAGS&quot; \ make clean make make install ./build_android.sh]]></content>
       <categories>
         <category>c++</category>
       </categories>
